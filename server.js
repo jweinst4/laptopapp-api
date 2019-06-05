@@ -8,7 +8,7 @@ require('dotenv').config()
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/items'
 
-const whitelist = ['http://localhost:3000', 'https://laptop-app.herokuapp.com']
+const whitelist = ['http://localhost:3000', 'https://laptop-app-client.herokuapp.com']
 const corsOptions = {
   origin (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
