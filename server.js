@@ -39,6 +39,8 @@ mongoose.connection.once('open', () => {
   console.log('connected to mongoose...')
 })
 
+app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+
 
 
 // Routes
