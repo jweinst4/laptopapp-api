@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const PORT =  process.env.PORT || 3003
 const cors = require('cors')
+const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 require('dotenv').config()
 
@@ -39,7 +40,8 @@ mongoose.connection.once('open', () => {
   console.log('connected to mongoose...')
 })
 
-app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use(methodOverride('_method'));
+
 
 
 
