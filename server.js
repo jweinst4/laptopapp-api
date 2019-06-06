@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const PORT =  process.env.PORT || 3003
 const cors = require('cors')
-const methodOverride = require('method-override')
+
 const mongoose = require('mongoose')
 require('dotenv').config()
 
@@ -39,11 +39,6 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 mongoose.connection.once('open', () => {
   console.log('connected to mongoose...')
 })
-
-app.use(methodOverride('_method'));
-
-
-
 
 // Routes
 const itemsController = require('./controllers/items.js')
